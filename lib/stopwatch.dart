@@ -41,7 +41,6 @@ class StopWatchState extends State<StopWatch> {
           Expanded(child: _buildCounter(context)),
           Container(
             padding: const EdgeInsets.all(10),
-            //color: Colors.amber,
             color: Colors.grey,
             child: ListTile(
               contentPadding: EdgeInsets.symmetric(horizontal: 50),
@@ -147,12 +146,7 @@ class StopWatchState extends State<StopWatch> {
     setState(() {
       isTicking = false;
     });
-    // final totalRuntime = laps.fold(milliseconds, (total, lap) => total + lap);
-    // final alert = PlatformAlert(
-    //   title: 'Run Completed!',
-    //   message: 'Total Run Time is ${_secondsText(totalRuntime)}.',
-    // );
-    // alert.show(context);
+
     final controller = showBottomSheet(context: context, builder: _buildRunCompleteSheet);
 
     Future.delayed(Duration(seconds: 5)).then((_) {
